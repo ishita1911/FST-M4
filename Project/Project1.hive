@@ -1,0 +1,20 @@
+CREATE TABLE episodeIV(name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+TBLPROPERTIES("skip.header.line.count"="2");
+LOAD DATA LOCAL INPATH '/root/episodeIV_dialogue.txt' INTO TABLE episodeIV;
+INSERT OVERWRITE DIRECTORY 'user/root/M4Project/export' ROW FORMAT DELEIMITED FIELDS TERMINATED '\t'
+SELECT name, COUNT(name) AS no_of_lines FROM episodeIV GROUP BY name ORDER BY no_of_lines DESC;
+
+CREATE TABLE episodeV(name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+TBLPROPERTIES("skip.header.line.count"="2");
+LOAD DATA LOCAL INPATH '/root/episodeV_dialogue.txt' INTO TABLE episodeIV;
+INSERT OVERWRITE DIRECTORY 'user/root/M4Project/export' ROW FORMAT DELEIMITED FIELDS TERMINATED '\t'
+SELECT name, COUNT(name) AS no_of_lines FROM episodeIV GROUP BY name ORDER BY no_of_lines DESC;
+
+CREATE TABLE episodeVI(name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+TBLPROPERTIES("skip.header.line.count"="2");
+LOAD DATA LOCAL INPATH '/root/episodeVI_dialogue.txt' INTO TABLE episodeIV;
+INSERT OVERWRITE DIRECTORY 'user/root/M4Project/export' ROW FORMAT DELEIMITED FIELDS TERMINATED '\t'
+SELECT name, COUNT(name) AS no_of_lines FROM episodeIV GROUP BY name ORDER BY no_of_lines DESC;
+
+
+
