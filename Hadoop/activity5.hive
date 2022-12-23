@@ -1,0 +1,13 @@
+hive> CREATE TABLE employee
+    > (id INT, name STRING, dept STRING, yoj INT, salary INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+    > TBLPROPERTIES ("skip.header.line.count"="1");
+hive> LOAD DATA LOCAL INPATH
+    > '/EmpData.csv'
+    > INTO TABLE employee;
+# Column operations
+hive> SELECT  id, name FROM employee;
+# Row operation
+hive> SELECT * FROM employee WHERE salary > 30000;
+# Column operation that need aggregation
+hive> SELECT count(*) FROM employee; 
